@@ -1,11 +1,11 @@
 import * as React from "react";
+import {Button as ReactButton} from "react-bootstrap";
 
 export interface ButtonProps {
     label: string;
 }
 
-const Button = (props: ButtonProps) => {
-    return <button>{props.label}</button>;
+export const Button = (props: ButtonProps) => {
+    return <ReactButton>{props.label}</ReactButton>;
 };
 
-export default Button;

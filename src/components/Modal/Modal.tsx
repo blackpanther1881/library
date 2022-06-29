@@ -1,23 +1,22 @@
 import * as React from "react";
 import {Modal as ReactModal} from "react-bootstrap";
 
-export interface ModalProps {
+export type TestComponentProps = {
     showModal: boolean;
     headerContent: string;
     bodyContent: string;
-}
+};
 
-const Modal = (props: ModalProps) => {
+export const Modal = (prop: TestComponentProps) => {
+    console.log("Raj",prop.showModal, "showModal");
     return (
-    <ReactModal show={props.showModal} className="modal-container claim" centered={true}>
+    <ReactModal show={prop.showModal} className="modal-container claim" centered={true}>
         <ReactModal.Header closeButton>
-            <ReactModal.Title>{props.headerContent}</ReactModal.Title>
+            <ReactModal.Title>{prop.headerContent}</ReactModal.Title>
         </ReactModal.Header>
         <ReactModal.Body>
-            {props.bodyContent}
+            {prop.bodyContent}
         </ReactModal.Body>
     </ReactModal>
     )
 }
-
-export default Modal;
