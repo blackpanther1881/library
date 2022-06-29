@@ -1,0 +1,16 @@
+.button-primary {
+  display: inline-block;
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  color: $button-variant-color;
+  text-align: center;
+  white-space: $button-white-space;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 0 solid transparent;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
