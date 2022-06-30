@@ -1,4 +1,4 @@
-.button-primary {
+.button {
   display: inline-block;
   font-family: $button-font-family;
   font-weight: $button-font-weight;
@@ -12,5 +12,91 @@
   border: 0 solid transparent;
   border-radius: $button-border-radius;
   cursor: pointer;
+  @include button-size($button-padding-y, $button-padding-x, $button-font-size);
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.button-primary {
+  @include button-variant(
+                  $button-primary-color,
+                  0px solid,
+                  none,
+                  $button-primary-text-color,
+                  none,
+                  $button-primary-hover-color,
+                  $button-primary-text-color,
+                  $button-primary-hover-box-shadow,
+                  0px solid,
+                  none,
+                  $button-primary-focus-color,
+                  $button-primary-text-color,
+                  none,
+                  0px solid,
+                  none,
+                  $button-primary-disabled-color,
+                  $gray-100,
+                  none,
+                  0px solid,
+                  none,
+  )
+}
+
+.button-secondary{
+  @include button-variant(
+                  trasparent,
+                  3px solid $button-primary-color,
+                  none,
+                  $button-secondary-text-color,
+                  none,
+                  transparent,
+                  $button-secondary-text-color,
+                  $button-primary-hover-box-shadow,
+                  3px solid $button-primary-hover-color,
+                  none,
+                  transparent,
+                  $button-secondary-text-color,
+                  none,
+                  3px solid $button-primary-focus-color,
+                  none,
+                  transparent,
+                  $button-secondary-text-color,
+                  none,
+                  3px solid $button-primary-disabled-color,
+                  none,
+  );
+}
+
+.button-tertiary {
+  //color: $button-outline-color;
+  @include button-variant(
+                  trasparent,
+                  0px solid,
+                  none,
+                  #FCFCFC,
+                  none,
+                  transparent,
+                  #F4878C,
+                  none,
+                  0px,
+                  none,
+                  transparent,
+                  #811318,
+                  none,
+                  0px solid,
+                  none,
+                  transparent,
+                  #6C6C6C,
+                  none,
+                  0px,
+                  none,
+  );
+
+}
+
+.button-lg {
+  @include button-size($button-padding-y-lg, $button-padding-x-lg, $button-font-size-lg);
+}
+
+.button-sm {
+  @include button-size($button-padding-y-sm, $button-padding-x-sm, $button-font-size-sm);
 }

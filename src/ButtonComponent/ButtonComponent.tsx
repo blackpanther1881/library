@@ -1,7 +1,7 @@
 import React from "react";
-import {Button as ReactButton} from "react-bootstrap";
+// import {Button as ReactButton} from "react-bootstrap";
 import {ButtonComponentProps} from "./ButtonComponent.types";
 
 export const ButtonComponent = (prop: ButtonComponentProps) => {
-    return <ReactButton>{prop.content}</ReactButton>;
+    return <button className={`button ${prop.className}`}>{prop.content}</button>;
 };
