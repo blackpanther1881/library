@@ -4,7 +4,7 @@ import {ModalComponentProps} from "./ModalComponent.types";
 
 export const ModalComponent = (prop: ModalComponentProps) => {
     return (
-        <ReactModal show={prop.show} className="modal-container claim" centered={true}>
+        <ReactModal show={prop.show} className="modal-container" centered={true} onHide={prop.handleClose}>
             <ReactModal.Header closeButton>
                 <ReactModal.Title>{prop.headerContent}</ReactModal.Title>
             </ReactModal.Header>
