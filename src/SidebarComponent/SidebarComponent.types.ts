@@ -10,22 +10,26 @@ export type SidebarComponentProps = {
     ];
     childComp?: React.ReactNode;
     showMoreList:boolean;
-    moreListTitle?:{
+    showMoreListDropdown?:boolean;
+    showMoreListDropdownHandler?():void;
+    moreListTitle:{
         title:string,
-        icon:React.ReactNode
+        icon ?: React.ReactNode
     }
     moreList?:[
         {
-            name:string,
-            path:string,
-            icon ? : React.ReactNode
-        },
-        {
-            name:string,
-            path:string,
-            icon ? : React.ReactNode
+            name: string,
+            path: string,
+            icon?: React.ReactNode
         }
-    ]
-
-
+    ];
+    balanceContent ?:React.ReactNode
+    socialList?:[
+        {
+            icon:React.ReactNode,
+            url:string
+        }
+    ],
+    showSidebar:boolean,
+    sideBarHandler?():void
 };
