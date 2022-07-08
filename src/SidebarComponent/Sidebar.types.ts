@@ -1,10 +1,10 @@
 import React from 'react';
-export type SidebarComponentProps = {
+export type SidebarTypes = {
     logo:string;
     navList:[
         {
-            name:string,
-            path:string,
+            name?:string,
+            path?:string,
             icon ? : React.ReactNode
         }
     ];
@@ -13,21 +13,21 @@ export type SidebarComponentProps = {
     showMoreListDropdown?:boolean;
     showMoreListDropdownHandler?():void;
     moreListTitle:{
-        title:string,
+        title?:string,
         icon ?: React.ReactNode
     }
     moreList?:[
         {
-            name: string,
-            path: string,
+            name?: string,
+            path?: string,
             icon?: React.ReactNode
         }
     ];
     balanceContent ?:React.ReactNode
     socialList?:[
         {
-            icon:React.ReactNode,
-            url:string
+            icon?:React.ReactNode,
+            url?:string
         }
     ],
     showSidebar:boolean,

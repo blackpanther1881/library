@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import {Nav, Collapse} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import {SidebarTypes} from "./Sidebar.types";
-import {IconComponent} from "../IconComponent";
+import {IconComponent} from "../../IconComponent";
+import logo from "../assets/logo.svg";
 
 export const FullScreenComponent = (prop: SidebarTypes) => {
     return (
@@ -10,15 +11,15 @@ export const FullScreenComponent = (prop: SidebarTypes) => {
             <div className="side-bar-content">
                 <div className="nav-link-section">
                     <div className="logo-container">
-                        <img src={prop.logo} alt="logo" />
+                        <img src={logo} alt="logo" />
                     </div>
                     <Nav defaultActiveKey="/" className="flex-column nav-list">
                         {  prop.navList.map((navItem, index) => (
                             <Nav.Item as="li" key={index}>
-                                <NavLink to={navItem.path} className="nav-link">
+                                <a href={navItem.path} className="nav-link d-block">
                                     {navItem.icon}
                                     <span className="text">{navItem.name}</span>
-                                </NavLink>
+                                </a>
                             </Nav.Item>
                         ))
                         }

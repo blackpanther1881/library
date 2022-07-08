@@ -1,3 +1,19 @@
+.app-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 0.4fr 3fr;
+  background: radial-gradient(112.6% 112.6% at 50% -12.6%, #372627 0%, #030303 44.79%);
+}
+
+.main-container{
+  background-image: url("./assets/bg_round1.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  height: 100vh;
+  overflow: auto;
+}
+
 .wrapper {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);

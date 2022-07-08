@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
-//
-// import { Header } from './Header';
-import {Sidebar} from "./SidebarComponent";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Sidebar } from './SidebarComponent';
 import {IconComponent} from "../IconComponent";
+// import logo from "./assets/logo.svg";
+// import "./_sidebar.scss";
 
-type User = {
-    name: string;
-};
 const snavList = [
     {
         name:'Staking',
@@ -109,43 +107,44 @@ const socialList = [
     }
 ];
 
-export const Page: React.VFC = () => {
-    const [user, setUser] = React.useState<User>();
-    const [lisst , setLisst] = useState([]);
-    const [moreDropdown ,setMoreDropdown] = useState(false);
+export default {
+    title: 'Example/Sidebar',
+    component: Sidebar,
+    // parameters: {
+    //     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
+    //     layout: 'fullscreen',
+    // },
+} as ComponentMeta<typeof Sidebar>;
 
-    const handl = () => {
-        setMoreDropdown(!moreDropdown);
-        if(!moreDropdown){
-            setLisst(list);
-        }else {
-            setLisst([]);
-        }
-    }
+const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
-    return (
-        <div className="app-layout">
-            <Sidebar
-                logo={'./assets/logo.svg'}
-                navList={snavList}
-                showMoreList={true}
-                moreListTitle={title}
-                moreList={lisst}
-                showSidebar={true}
-                socialList={socialList}
-                showMoreListDropdown={moreDropdown}
-                showMoreListDropdownHandler={handl}
-                />
-            {/*<Header*/}
-            {/*    user={user}*/}
-            {/*    onLogin={() => setUser({ name: 'Jane Doe' })}*/}
-            {/*    onLogout={() => setUser(undefined)}*/}
-            {/*    onCreateAccount={() => setUser({ name: 'Jane Doe' })}*/}
-            {/*/>*/}
-            <div className="main-container">
+// export const LoggedIn = Template.bind({});
+// LoggedIn.args = {
+//     user: {
+//         name: 'Jane Doe',
+//     },
+// };
 
-            </div>
+export const SocialList = Template.bind({});
+SocialList.args = {
+    logo: '/logo.svg',
+    navList: snavList,
+    socialList: socialList,
+    moreListTitle: title,
+    showMoreList: true,
+    moreList: list,
+    showMoreListDropdown:true,
+    showSidebar: false,
+};
 
-        </div>
-    );
+
+export const Primary = Template.bind({});
+Primary.args = {
+    logo: '/logo.svg',
+    navList: snavList,
+    socialList: socialList,
+    moreListTitle: title,
+    showMoreList: true,
+    showMoreListDropdown:false,
+    showSidebar: false,
 };

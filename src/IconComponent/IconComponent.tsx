@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // @ts-ignore
 import symbol_defs from '../images/icon-symbols.svg';
-import './index.css';
+import './index.scss';
 import {IconComponentProps} from "./IconComponent.types";
 
 export const IconComponent = (prop: IconComponentProps) => {
