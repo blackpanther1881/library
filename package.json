@@ -1,5 +1,6 @@
 {
   "name": "@blackpanther1881/library",
+  "homepage": "http://blackpanther1881.github.io/library",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/blackpanther1881"
   },
@@ -8,7 +9,9 @@
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook -o docs-build -s ./stories/assets"
   },
   "author": "raj",
   "license": "ISC",
