@@ -1,15 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Sidebar } from './SidebarComponent';
-import {IconComponent} from "../IconComponent";
-// import logo from "./assets/logo.svg";
+import { Sidebar } from './Sidebar';
+import {Icon} from "../elements/Icon";
+// @ts-ignore
+import logo from "./assets/logo.svg";
 // import "./_sidebar.scss";
 
+console.log(logo, "logologologo");
 const snavList = [
     {
         name:'Staking',
         path:'/',
-        icon: <IconComponent
+        icon: <Icon
             icon="staking"
             viewClass="staking"
         />
@@ -17,7 +19,7 @@ const snavList = [
     {
         name:'Defi',
         path:'/defi',
-        icon: <IconComponent
+        icon: <Icon
             icon="defi"
             viewClass="defi"
         />
@@ -25,7 +27,7 @@ const snavList = [
     {
         name:'Transactions',
         path:'/transactions',
-        icon:  <IconComponent
+        icon:  <Icon
             icon="transactions"
             viewClass="transactios"
         />
@@ -37,7 +39,7 @@ const list = [
         name:'pstake.finance',
         path:'/',
         icon:
-            <IconComponent
+            <Icon
                 icon="globe"
                 viewClass="item"
             />,
@@ -45,7 +47,7 @@ const list = [
     {
         name:'Docs',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="docs"
             viewClass="item"
         />,
@@ -53,7 +55,7 @@ const list = [
     {
         name:'Raise a Ticket',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="bug"
             viewClass="item"
         />,
@@ -61,7 +63,7 @@ const list = [
     {
         name:'Testnet',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="testnet"
             viewClass="item"
         />,
@@ -69,7 +71,7 @@ const list = [
     {
         name:'Analytics',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="analytics"
             viewClass="item"
         />,
@@ -77,7 +79,7 @@ const list = [
     {
         name:'Governance',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="governance"
             viewClass="item"
         />,
@@ -86,7 +88,7 @@ const list = [
 
 const title = {
     title: 'More',
-    icon: <IconComponent
+    icon: <Icon
         icon="right-arrow"
         viewClass="right-arrow m-0"
     />
@@ -108,7 +110,7 @@ const socialList = [
 ];
 
 export default {
-    title: 'Example/Sidebar',
+    title: 'Library/Sidebar',
     component: Sidebar,
     // parameters: {
     //     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
@@ -127,7 +129,7 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const SocialList = Template.bind({});
 SocialList.args = {
-    logo: '/logo.svg',
+    logo: logo,
     navList: snavList,
     socialList: socialList,
     moreListTitle: title,
@@ -140,7 +142,7 @@ SocialList.args = {
 
 export const Primary = Template.bind({});
 Primary.args = {
-    logo: '/logo.svg',
+    logo: logo,
     navList: snavList,
     socialList: socialList,
     moreListTitle: title,

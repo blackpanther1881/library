@@ -1,9 +1,9 @@
 import "./css/_main.scss";
 export * from "./TestComponent";
-export * from "./ButtonComponent";
-export * from "./ModalComponent";
-export * from "./SidebarComponent";
-export * from "./IconComponent";
-export * from "./InputComponent";
-export * from "./InputDropdown";
-export * from "./Tab"
+export * from "./elements/Button";
+export * from "./components/Modal";
+export * from "./components/Sidebar";
+export * from "./elements/Icon";
+export * from "./components/Input";
+export * from "./components/InputDropdown";
+export * from "./components/Tab"

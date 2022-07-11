@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
 //
 // import { Header } from './Header';
-import {Sidebar} from "./SidebarComponent";
-import {IconComponent} from "../IconComponent";
-
+import {Sidebar} from "./Sidebar";
+import {Icon} from "../elements/Icon";
+// @ts-ignore
+import logo from "./assets/logo.svg";
+import {Tab} from "../components/Tab";
+22
 type User = {
     name: string;
 };
-const snavList = [
+const navList = [
     {
         name:'Staking',
         path:'/',
-        icon: <IconComponent
+        icon: <Icon
             icon="staking"
             viewClass="staking"
         />
@@ -19,7 +22,7 @@ const snavList = [
     {
         name:'Defi',
         path:'/defi',
-        icon: <IconComponent
+        icon: <Icon
             icon="defi"
             viewClass="defi"
         />
@@ -27,7 +30,7 @@ const snavList = [
     {
         name:'Transactions',
         path:'/transactions',
-        icon:  <IconComponent
+        icon:  <Icon
             icon="transactions"
             viewClass="transactios"
         />
@@ -39,7 +42,7 @@ const list = [
         name:'pstake.finance',
         path:'/',
         icon:
-            <IconComponent
+            <Icon
                 icon="globe"
                 viewClass="item"
             />,
@@ -47,7 +50,7 @@ const list = [
     {
         name:'Docs',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="docs"
             viewClass="item"
         />,
@@ -55,7 +58,7 @@ const list = [
     {
         name:'Raise a Ticket',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="bug"
             viewClass="item"
         />,
@@ -63,7 +66,7 @@ const list = [
     {
         name:'Testnet',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="testnet"
             viewClass="item"
         />,
@@ -71,7 +74,7 @@ const list = [
     {
         name:'Analytics',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="analytics"
             viewClass="item"
         />,
@@ -79,7 +82,7 @@ const list = [
     {
         name:'Governance',
         path:'/',
-        icon:<IconComponent
+        icon:<Icon
             icon="governance"
             viewClass="item"
         />,
@@ -88,7 +91,7 @@ const list = [
 
 const title = {
     title: 'More',
-    icon: <IconComponent
+    icon: <Icon
         icon="right-arrow"
         viewClass="right-arrow m-0"
     />
@@ -109,41 +112,47 @@ const socialList = [
     }
 ];
 
+const tabList = [
+    {
+        eventKey:'Stake',
+        title:'Stake',
+        tabContent:"stake content"
+    },
+    {
+        eventKey:'UnStake',
+        title:'UnStake',
+        tabContent:'unstake content'
+    }
+]
+
 export const Page: React.VFC = () => {
-    const [user, setUser] = React.useState<User>();
-    const [lisst , setLisst] = useState([]);
+    const [moreList , setMoreList] = useState([{}]);
     const [moreDropdown ,setMoreDropdown] = useState(false);
 
     const handl = () => {
         setMoreDropdown(!moreDropdown);
         if(!moreDropdown){
-            setLisst(list);
+            setMoreList(list);
         }else {
-            setLisst([]);
+            setMoreList([]);
         }
     }
 
     return (
         <div className="app-layout">
             <Sidebar
-                logo={'./assets/logo.svg'}
-                navList={snavList}
+                logo={logo}
+                navList={navList}
                 showMoreList={true}
                 moreListTitle={title}
-                moreList={lisst}
+                moreList={moreList}
                 showSidebar={true}
                 socialList={socialList}
                 showMoreListDropdown={moreDropdown}
                 showMoreListDropdownHandler={handl}
                 />
-            {/*<Header*/}
-            {/*    user={user}*/}
-            {/*    onLogin={() => setUser({ name: 'Jane Doe' })}*/}
-            {/*    onLogout={() => setUser(undefined)}*/}
-            {/*    onCreateAccount={() => setUser({ name: 'Jane Doe' })}*/}
-            {/*/>*/}
             <div className="main-container">
-
+                <Tab activeKey={"Stake"} tabList={tabList}/>
             </div>
 
         </div>

@@ -14,8 +14,18 @@
   border-radius: $button-border-radius;
   cursor: pointer;
   @include button-size($button-padding-y, $button-padding-x, $button-font-size);
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  &.icon-button {
+    display: flex;
+    align-items: center;
+    .icon{
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+    }
+  }
 }
+
 
 .button-primary {
   @include button-variant(

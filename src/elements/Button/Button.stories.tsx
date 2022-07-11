@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {Button}  from '../elements/Button';
-import {Icon} from "../elements/Icon";
+import {Button}  from './Button';
 
 export default {
     title: 'Library/Button',
@@ -20,25 +19,8 @@ Primary.args = {
     className:'button-primary'
 };
 
-
 export const Secondary = Template.bind({});
 Secondary.args = {
     label: 'Secondary',
     className:'button-secondary'
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-    label: 'Secondary',
-    className:'button-tertiary'
-};
-
-export const IconButton = Template.bind({});
-IconButton.args = {
-    label: 'Icon Button',
-    className:'button-primary icon-button',
-    icon:<Icon
-        icon="arrow-redirect-white"
-        viewClass="redirect"
-    />
 };

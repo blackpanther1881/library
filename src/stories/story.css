@@ -1,12 +1,11 @@
-.app-layout {
+.app-layout, .sb-show-main {
   display: grid;
   gap: 1.5rem;
   grid-template-areas: "sidebar main";
   grid-template-columns: 0.4fr 3fr;
   background: radial-gradient(112.6% 112.6% at 50% -12.6%, #372627 0%, #030303 44.79%); }
 
-.main-container {
-  background-image: url("./assets/bg_round1.svg");
+.main-container, .sb-show-main {
   background-repeat: no-repeat;
   background-position: bottom right;
   height: 100vh;
@@ -39,5 +38,8 @@ button + button {
   color: #333;
   font-size: 14px;
   margin-right: 10px; }
+
+.button.icon-button {
+  stroke: #FCFCFC; }
 
 /*# sourceMappingURL=story.css.map */

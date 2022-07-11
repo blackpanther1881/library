@@ -5,8 +5,6 @@
   backdrop-filter: blur(17px);
   .side-bar-content{
     position: sticky;
-    //top: 5rem;
-    //display: block !important;
     height: 100vh;
     padding-left: 0.25rem;
     margin-left: -0.25rem;
@@ -14,10 +12,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    //.nav-link-section{
-    //  border-bottom: 1px solid #2B2B2B;
-    //  padding-bottom: 1rem;
-    //}
     .logo-container{
       padding: 2.1875rem 0;
       text-align: center;
@@ -86,7 +80,8 @@
           color: $side-bar-item-color;
           font-weight: 400;
           font-size: 14px;
-          display: block;
+          display: flex;
+          align-items: center;
           line-height: 21px;
           text-decoration: none;
           &:first-child{

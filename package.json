@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/blackpanther1881"
   },
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "library ",
   "scripts": {
     "rollup": "rollup -c",
