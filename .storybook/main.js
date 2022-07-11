@@ -9,7 +9,7 @@ module.exports = {
     "@storybook/addon-interactions",
     "storybook-addon-sass-postcss"
   ],
-  "staticDirs": ['../public'],
+  "staticDirs": ['../src/images'],
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"

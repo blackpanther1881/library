@@ -9,9 +9,7 @@
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
-    "build-storybook": "build-storybook -o docs-build -s ./stories/assets"
+    "build-storybook": "build-storybook"
   },
   "author": "raj",
   "license": "ISC",
